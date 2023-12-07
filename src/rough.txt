@@ -1,0 +1,84 @@
+if (w % 2 != 0) {
+                    if (r % 2 == 0 && g % 2 == 0 && b % 2 == 0) {
+                        out.println("Yes");
+                    } else {
+                        if (r == 0 || g == 0 || b == 0) {
+                            out.println("No");
+                        } else {
+                            int odd = 0;
+                            r -= 1;
+                            g -= 1;
+                            b -= 1;
+                            w += 3;
+
+                            if (r % 2 != 0) odd++;
+                            if (g % 2 != 0) odd++;
+                            if (b % 2 != 0) odd++;
+
+                            if (odd == 1) {
+                                out.println("Yes");
+                            } else {
+                                int minValue = Math.min(r, Math.min(g, b));
+
+                                r -= minValue;
+                                g -= minValue;
+                                b -= minValue;
+                                w += minValue;
+                                odd = 0;
+                                if (r % 2 != 0) odd++;
+                                if (g % 2 != 0) odd++;
+                                if (b % 2 != 0) odd++;
+                                if (w % 2 != 0) odd++;
+
+                                if (odd > 1) {
+                                    out.println("No");
+                                } else {
+                                    out.println("Yes");
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    int odd = 0;
+                    if (r % 2 != 0) odd++;
+                    if (g % 2 != 0) odd++;
+                    if (b % 2 != 0) odd++;
+
+                    if (odd == 1) {
+                        out.println("Yes");
+                    } else if (r == 0 || g == 0 || b == 0) {
+                        out.println("No");
+                    } else {
+                        odd = 0;
+                        r -= 1;
+                        g -= 1;
+                        b -= 1;
+                        w += 3;
+
+                        if (r % 2 != 0) odd++;
+                        if (g % 2 != 0) odd++;
+                        if (b % 2 != 0) odd++;
+
+                        if (odd == 1) {
+                            out.println("Yes");
+                        } else {
+                            int minValue = Math.min(r, Math.min(g, b));
+
+                            r -= minValue;
+                            g -= minValue;
+                            b -= minValue;
+                            w += minValue;
+                            odd = 0;
+                            if (r % 2 != 0) odd++;
+                            if (g % 2 != 0) odd++;
+                            if (b % 2 != 0) odd++;
+                            if (w % 2 != 0) odd++;
+
+                            if (odd > 1) {
+                                out.println("No");
+                            } else {
+                                out.println("Yes");
+                            }
+                        }
+                    }
+                }
